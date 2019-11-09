@@ -7,37 +7,39 @@ import {
   TouchableHighlight,
   View
 } from 'react-native';
-import Camera from 'react-native-camera';
+import {RNCamera} from 'react-native-camera';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Camera
+        <RNCamera
           ref={(cam) => {
             this.camera = cam;
           }}
-          style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}>
+          type={RNCamera.Constants.Type.back}
+          style={styles.preview}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
-        </Camera>
+        </RNCamera>
       </View>
     );
   }
 
-  takePicture() {
-    const options = {};
+  takePicture=async()=> {
     //options.location = ...
-    this.camera.capture({metadata: options})
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
+    if (this.camera) {
+      const options = { quality: 0.5, base64: true };
+      const data = await this.camera.takePictureAsync(options);
+      console.log(data.uri);
+    }
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    display:'flex',
     flex: 1,
-    flexDirection: 'row',
+   // flexDirection: 'row',
   },
   preview: {
     flex: 1,
@@ -53,5 +55,5 @@ const styles = StyleSheet.create({
     margin: 40
   }
 });
-
+export default App;
 AppRegistry.registerComponent('App', () => App);
