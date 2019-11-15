@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "674758177680",
+    "firebase_url": "https://rncamera-integration.firebaseio.com",
+    "project_id": "rncamera-integration",
+    "storage_bucket": "rncamera-integration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674758177680:android:8915a943cb10f6c2813915",
+        "android_client_info": {
+          "package_name": "com.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674758177680-rm09lpfdnrfok44v0ofb5e08mkghq41s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTgqyU67zFSZLvemUk4BX6QIV3xcGSOdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674758177680-rm09lpfdnrfok44v0ofb5e08mkghq41s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
